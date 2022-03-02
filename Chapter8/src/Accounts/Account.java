@@ -25,7 +25,7 @@ public class Account extends Customer {
 	
 	public Account(double bal, String fName, String lName, String str, String city, String pro, String zip) { //constructor method
 		super(fName, lName, str, city, pro, zip);
-		balance = bal;
+		balance = bal; // assigning balance
 	}
 	
 
