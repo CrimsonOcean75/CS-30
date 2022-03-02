@@ -1,0 +1,15 @@
+#1: a Graphical User Interface 
+
+#2: in an event driven apllication code is excuted if and even is triggered. (like when a user presses a button)
+
+#3: yes, a frame is a top level container designed to hold all components
+
+#4: yes, with the setText() and setIcon() methods (and more) a label can respond to an event
+
+#5: to insure that each event handler finshes doing it thing before the next one starts.
+
+6#: a lable cannot trigger an event while a button can. 
+
+	
+
+
