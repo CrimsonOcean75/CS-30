@@ -19,21 +19,19 @@ import java.util.Scanner;
 
 public class Vehicle_Testing_Code {
 
-	public static void main(String[] args) {
+	public static void main(String[] args) { // this java file tests out the vehicle objects by using there methods 
 		
 		Scanner input = new Scanner(System.in);
-		int cho;
+		int cho; // Variables for users choice
 		
-		//Vehicle(int doorNUM, Double wheelD, boolean full, String col, boolean comp, int seat)
-		//(int doorNUM, Double wheelD, boolean full, String col, boolean comp, int seat, boolean civ)
 		
 		
 		Car HondaCiv = new Car(4, 17.0, true, "red", false, 4, true);
 		
-		System.out.println("The car you have " + HondaCiv.isCivicString() +". And it's colour is " + HondaCiv.getColour() + ".");
+		System.out.println("The car you have " + HondaCiv.isCivicString() +". And it's colour is " + HondaCiv.getColour() + "."); // Printing select aspects of your car
 		
 		
-		System.out.println("do you want to check your vehicle's fulids? (1 for yes 2 for no)");
+		System.out.println("do you want to check your vehicle's fulids? (1 for yes 2 for no)"); // asking if you want to check the vehicles fluid level
 		
 		cho =  input.nextInt();
 		input.close();
@@ -41,11 +39,11 @@ public class Vehicle_Testing_Code {
 		if (cho == 1) {
 			
 			
-			if(HondaCiv.getfulid() == true) {
-				System.out.println("your vehicle's fluid is full");
+			if(HondaCiv.getfulid() == true) { // if statement based off or weather not your vehicles  
+				System.out.println("your vehicle's fluid is full"); //full
 			}
 			else {
-				System.out.println("your vehicle's fluid is not full");
+				System.out.println("your vehicle's fluid is not full"); //not full
 			}
 
 	

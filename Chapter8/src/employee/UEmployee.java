@@ -20,7 +20,7 @@ public class UEmployee {
 	private double salary;
 	
 	
-	public UEmployee(String N, double S) { //making a class with a name and a salary
+	public UEmployee(String N, double S) { //constructor method
 		name = N;
 		salary = S;
 	}

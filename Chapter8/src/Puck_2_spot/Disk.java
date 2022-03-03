@@ -2,36 +2,54 @@ package Puck_2_spot;
 
 public class Disk extends Circle {
 
-	//Setting up class with private thickness variable
-	
-	private double thickness;
+private double thickness; // a varible for thcikness
 
-	//Disk constructor
-	public Disk(double r, double t) 
+	
+	
+	
+	
+	public Disk(double r, double t) //constructor
 	{
-		super(r);
+		super(r); // a circle with radius r
 		thickness = t;
 	}
 
-	//Method for replacing thickness
-	public void setThickness(double newThickness) 
+	
+	
+	
+	
+	public void setThickness(double newThickness) //a method changes thickness
 	{
 		thickness = newThickness;
 	}
 
-	//Method for retrieving thickness
-	public double getThickness() 
+	
+	
+	
+	
+	
+	public double getThickness() //a method that gets the thickness
 	{
 		return(thickness);
 	}
 
-	//Method for calculating volume by multiplying area by thickness
-	public double volume() 
+	
+	
+	
+	
+	
+	public double volume() //a method that calculates and returns volume
 	{
-		double v;
+		double v; //local volume variable
+		
 		v = super.area() * thickness;
+		
 		return v;
 	}
+	
+	
+	
+	
 	}
 
 

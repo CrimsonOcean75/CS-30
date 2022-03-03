@@ -19,13 +19,13 @@ public class Faculty extends UEmployee {
 	
 	private String department;
 	
-	public Faculty(String N, double S, String D) { // N = name S, = salary, D = department
+	public Faculty(String N, double S, String D) { // constructor method
 		super(N,S);
 		department = D;
 		
 	}
 	
-	public void setDepartment(String de) { // a method for seting the department name
+	public void setDepartment(String de) { // a method for setting the department name
 		department = de; 
 	}
 	

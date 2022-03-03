@@ -13,7 +13,7 @@ Course: Computer Programming 30
 
 package employee;
 
-public class Staff extends Faculty{ //getting ti to extend UEmployee
+public class Staff extends Faculty{ //extending UEmployee
 
 	
 	
@@ -21,17 +21,17 @@ public class Staff extends Faculty{ //getting ti to extend UEmployee
 	private String Title;
 	
 	
-	public Staff(String N, Double S, String D, String T) { // N = name, S = salary, D = department, T = title
-		super(N,S, D); //making a objet faculty in here
-		Title = T; //adding Title 
+	public Staff(String N, Double S, String D, String T) { //constructor method
+		super(N,S, D); //supering Faculty
+		Title = T; //adding Title variable
 	}
 	
 	public void setTitle(String ti) {
-		Title = ti; //taking a users imput to change the title
+		Title = ti; //taking a users input to change the title
 	}
 	
 	public String getTitle() {
-		return Title; //reutnring the title
+		return Title; //returning the title
 	}
 	
 	

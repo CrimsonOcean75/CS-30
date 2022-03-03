@@ -19,14 +19,14 @@ public class Minivan extends Vehicle{
 	
 	private boolean slidingDoor;
 	
-	public Minivan(int doorNUM, Double wheelD, boolean full, String col, boolean comp,int seat, boolean slide) {
+	public Minivan(int doorNUM, Double wheelD, boolean full, String col, boolean comp,int seat, boolean slide) { // constructor
 		super(doorNUM, wheelD, full, col, comp, seat);
 		slidingDoor = slide;
 		
 	}
 	
 	
-	public boolean getSlidingDoor() {
+	public boolean getSlidingDoor() { // returns true of false based on if your car has a sliding door
 		return(slidingDoor);
 	}
 	

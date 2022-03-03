@@ -15,7 +15,7 @@ package Accounts;
 
 public class Customer {
 
-private String firstName, lastName, street, city, province, zip;
+private String firstName, lastName, street, city, province, zip; //intilizing the variables that a customer would have
 		
 	
 	/**

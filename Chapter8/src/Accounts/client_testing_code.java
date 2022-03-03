@@ -18,8 +18,8 @@ import java.util.Scanner;
 public class client_testing_code {
 
 	public static void main(String[] args) {
-		// TODO Auto-generated
-		@SuppressWarnings("unused") //making it shut up
+		
+		//this code just generaly prints out everything to test out the object classes the details of this file are not important.
 		
 		double get, get1;
 

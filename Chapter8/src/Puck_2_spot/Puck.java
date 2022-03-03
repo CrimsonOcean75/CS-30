@@ -50,7 +50,7 @@ public class Puck extends Disk implements Comparable<Object>
 		Puck testPuck = (Puck)p; //Seperates method object into new object to use as comparison against the old using the super classes
 		if (testPuck.getRadius() == super.getRadius() && testPuck.getThickness() == super.getThickness() && testPuck.getWeight() == weight) 
 		{
-			return true;
+			return true; // true if the pucks are the same in every aspect
 		} 
 		else 
 		{
@@ -58,19 +58,19 @@ public class Puck extends Disk implements Comparable<Object>
 		}
 	}
 	
-	//Method for returning a string with information on the object
-	public String toString(Object p) 
+	
+	public String toString(Object p) //retuning all the info on an object you pass it
 	{
 		Puck strPuck = (Puck)p;
-		return("The radius of the puck is " + strPuck.getRadius() + ", the thickness is " + strPuck.getThickness() + ", and the weight is " + strPuck.getThickness() + "\n" + getDivision(strPuck));
+		return("The radius of the puck is " + strPuck.getRadius() + ", the thickness is " + strPuck.getThickness() + ", and the weight is " + strPuck.getThickness() + " \n " + getDivision(strPuck));
 	}
 	
-	//Compares the weights of the first and second puck and returns an int based on the outcome
-	public int compareTo(Object p) 
+	
+	public int compareTo(Object p) //a method that compairs two pucks
 	{
 		Puck testPuck = (Puck)p;
 		
-		//If statement comparing the weight
+		//If statement comparing the weight of pucks
 		if (weight < testPuck.getWeight())
 		{
 			return 0;
@@ -79,7 +79,7 @@ public class Puck extends Disk implements Comparable<Object>
 		{
 			return 1;
 		}
-		else if (weight > testPuck.getWeight()) // i know its useless but it looks cool alright?
+		else if (weight > testPuck.getWeight()) // i know its useless but it looks cool
 		{
 			return 2;
 		}

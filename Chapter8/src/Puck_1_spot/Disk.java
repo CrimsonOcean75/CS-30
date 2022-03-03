@@ -23,8 +23,11 @@ public class Disk extends Circle {
 	
 	private double thickness; // a varible for thcikness
 
-	//the disk constructor
-	public Disk(double r, double t) 
+	
+	
+	
+	
+	public Disk(double r, double t) //constructor
 	{
 		super(r); // a circle with radius r
 		thickness = t;
@@ -33,8 +36,8 @@ public class Disk extends Circle {
 	
 	
 	
-	//a method that changes the thickness
-	public void setThickness(double newThickness) 
+	
+	public void setThickness(double newThickness) //a method changes thickness
 	{
 		thickness = newThickness;
 	}
@@ -43,8 +46,8 @@ public class Disk extends Circle {
 	
 	
 	
-	//a method that gets the thickness
-	public double getThickness() 
+	
+	public double getThickness() //a method that gets the thickness
 	{
 		return(thickness);
 	}
@@ -53,8 +56,8 @@ public class Disk extends Circle {
 	
 	
 	
-	//a method that calculates and returns volume
-	public double volume() 
+	
+	public double volume() //a method that calculates and returns volume
 	{
 		double v; //local volume variable
 		

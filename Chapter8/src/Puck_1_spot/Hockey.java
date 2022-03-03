@@ -23,8 +23,8 @@ public class Hockey {
 	public static void main(String[] args) 
 	{
 		//intitalize of two puck objects to be tested.
-		Puck yPuck = new Puck(1.5, 1.0, 4.5);
-		Puck sPuck = new Puck(2.0, 1.5, 5.5);
+		Puck yPuck = new Puck(1.5, 1.0, 4.5); // the youth puck 
+		Puck sPuck = new Puck(2.0, 1.5, 5.5); // the standared puck 
 		
 		//Printing information on the puck objects using .toString() method.
 		System.out.println("The first puck: \n\n" + yPuck.toString(yPuck)); // the second youth puck is like the one that is acually printed

@@ -3,13 +3,13 @@ package Puck_2_spot;
 public class Circle {
 
 	
-	//Setting up the class with private variables for internal calculation
+	
 			
-				private static final double PI = 3.14;
+				private static final double PI = 3.14; //variables for calculation
 				private double radius;
 
-			//Circle constructor
-			 public Circle(double r) 
+			
+			 public Circle(double r) //constructor method
 			 {
 				 radius = r;
 			 }
@@ -20,22 +20,24 @@ public class Circle {
 			 
 			 
 			 
-			 //Method for changing the radius of the circle
-			 public void setRadius(double newRadius) 
+			 
+			 public void setRadius(double newRadius) //setting the radius
 			 {
 				 radius = newRadius;
 			 }
 			 
-			 //Double method for calculating the area of the circle
-			 public double area() 
+			
+			 
+			 
+			 public double area() //a method that calculates and returns area
 			 {
 				 double circleArea;
 				 circleArea = PI * radius * radius;
 				 return(circleArea);
 			 }
 
-			 //Method for retrieving the area of the circle
-			 public double getRadius() 
+			 
+			 public double getRadius() //a method for geting the radius
 			 {
 				 return(radius);
 			 }

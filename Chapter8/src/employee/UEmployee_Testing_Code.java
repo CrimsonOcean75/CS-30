@@ -22,7 +22,7 @@ public class UEmployee_Testing_Code {
 
 	
 	
-	
+	//this program basicly just tests the objects to make sure they work, how this program works really isnt important
 	
 	public static void main(String[] args) {
 		Scanner input = new Scanner(System.in);
@@ -40,7 +40,7 @@ public class UEmployee_Testing_Code {
 		
 		
 		
-		System.out.println("\n\n"); //clearing the line 
+			System.out.println("\n\n"); //clearing the line 
 		
 		
 		
@@ -57,7 +57,7 @@ public class UEmployee_Testing_Code {
 			System.out.println("the department has been changed to: " + David.getDepartment() );
 		
 		
-		System.out.println("\n\n"); //clearing the line 
+			System.out.println("\n\n"); //clearing the line 
 		
 		
 		
