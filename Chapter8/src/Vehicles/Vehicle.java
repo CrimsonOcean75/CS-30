@@ -20,7 +20,7 @@ package Vehicles;
 //the general class that is inherteted by each kind of subclass of car
 
 
-public class Vehicle {
+public abstract class Vehicle {
 
 	
 	private int doorNumber, seating;

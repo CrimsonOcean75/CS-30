@@ -1,0 +1,20 @@
+#1 classes that Inherit another class have a "is a" relationship (A class "is a" type of another class) wheras a "has a" relationsip is one of composition
+(this class "has a" method called bike()).
+
+#2 both methods will be avilable to an object of the derived class. neither method overwirites the other and both would be able to be used.
+
+#3 An abstract method has no body to it and when it is inherited a class specific body can be added. When you overwirte a method there was body before
+and you are just making a new body for the sub class.
+
+#4 an abstact class defines an abstract/general concept (like a vehicle) where as an Interface is a class with abstract methods. they key differance is 
+an abstract class can be inherited where an interface cannot
+
+#6 
+a) doThat() is an abstract method (its notable that it does not have any french currly brackets and just a semicolon)
+b) Wo is an object that that has various methods for returning numbers
+c) it is implemented as somthing that can only be used in the Roo object
+d) doThis() doNow() doThat() 
+e) it is an overwirten method
+f) it extends Bo and assings int x to 1 
+g) yes, RooObject.doThis();  
+h) yes, super.doThis() 
