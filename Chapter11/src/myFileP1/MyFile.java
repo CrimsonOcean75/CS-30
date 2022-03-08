@@ -9,6 +9,8 @@ import javax.swing.JLabel;
 import javax.swing.JButton;
 import java.awt.event.ActionListener;
 import java.awt.event.ActionEvent;
+import java.awt.event.MouseAdapter;
+import java.awt.event.MouseEvent;
 
 public class MyFile {
 
@@ -43,13 +45,21 @@ public class MyFile {
 	 */
 	private void initialize() {
 		frame = new JFrame();
-		frame.setBounds(100, 100, 600, 300);
+		frame.setBounds(100, 100, 486, 169);
 		frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-		frame.getContentPane().setLayout(null);
 		
 		UFilein = new JTextField();
-		UFilein.setText("Enter the File you wish to check");
 		UFilein.setBounds(10, 72, 267, 30);
+		UFilein.addMouseListener(new MouseAdapter() {
+			@Override
+			
+			public void mouseClicked(MouseEvent e) {
+				UFilein.setText("");
+			}
+		});
+		frame.getContentPane().setLayout(null);
+		UFilein.setText("Enter the file you wish to check");
+		UFilein.setToolTipText("Enter the File you wish to check");
 		frame.getContentPane().add(UFilein);
 		UFilein.setColumns(10);
 		
@@ -58,14 +68,19 @@ public class MyFile {
 		frame.getContentPane().add(nothingBox);
 		
 		JLabel resultBox = new JLabel("");
-		resultBox.setBounds(314, 72, 260, 30);
+		resultBox.setBounds(314, 72, 155, 30);
 		frame.getContentPane().add(resultBox);
 		
 		JButton Check = new JButton("Check File");
+		Check.setBounds(314, 15, 155, 23);
 		Check.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 				
-				File textFile = new File(UFilein.getText()); // the test file is in myFileP1
+				
+				
+				//the file that works here is "no.txt" 
+				
+				File textFile = new File("../Chapter11/src/myFileP1/" + UFilein.getText()); // the test file is in myFileP1  this first part is the first part of the reliative path.
 				
 				if (textFile.exists()) {
 					resultBox.setText("the file exists");
@@ -78,7 +93,6 @@ public class MyFile {
 				
 			}
 		});
-		Check.setBounds(314, 15, 155, 23);
 		frame.getContentPane().add(Check);
 	}
 }
