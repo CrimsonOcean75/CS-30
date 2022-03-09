@@ -33,7 +33,7 @@ public class myFile {
     String status;
       
     AudioInputStream audioInputStream;
-    static String filePath;
+    static String filePath = "../Chapter11/src/myFileP2/0002074.wav";
   
     
     
@@ -41,7 +41,10 @@ public class myFile {
 			throws UnsupportedAudioFileException,
 			IOException, LineUnavailableException 
 	{
-		// create AudioInputStream object
+		
+    	
+    	
+    	// create AudioInputStream object
         audioInputStream = AudioSystem.getAudioInputStream(new File(filePath).getAbsoluteFile());
           
         // create clip reference
@@ -50,7 +53,8 @@ public class myFile {
         // open audioInputStream to the clip
         clip.open(audioInputStream);
           
-        clip.loop(Clip.LOOP_CONTINUOUSLY);
+        //clip.loop(Clip.LOOP_CONTINUOUSLY);
+        
         
         initialize();
 	}
@@ -75,35 +79,13 @@ public class myFile {
 	 * Create the application.
 	 */
 	
-	
-	private void gotoChoice(int c)
-            throws IOException, LineUnavailableException, UnsupportedAudioFileException 
-    {
-        switch (c) 
-        {
-            case 1:
-                pause();
-                break;
-            case 2:
-                resumeAudio();
-                break;
-            case 3:
-                restart();
-                break;
-            case 4:
-                stop();
-                break;
-            case 5:
-                System.out.println("Enter time (" + 0 + 
-                ", " + clip.getMicrosecondLength() + ")");
-                Scanner sc = new Scanner(System.in);
-                long c1 = sc.nextLong();
-                jump(c1);
-                break;
-      
-        }
-      
-    }
+	 public void stop() throws UnsupportedAudioFileException,
+	    IOException, LineUnavailableException 
+	    {
+	        currentFrame = 0L;
+	        clip.stop();
+	        clip.close();
+	    }
 	
 	
 	public void play() 
@@ -113,84 +95,16 @@ public class myFile {
           
         status = "play";
     }
-      
-    // Method to pause the audio
-    public void pause() 
-    {
-        if (status.equals("paused")) 
-        {
-            System.out.println("audio is already paused");
-            return;
-        }
-        this.currentFrame = this.clip.getMicrosecondPosition();
-        clip.stop();
-        status = "paused";
-    }
 	
- // Method to resume the audio
-    public void resumeAudio() throws UnsupportedAudioFileException,
-                                IOException, LineUnavailableException 
-    {
-        if (status.equals("play")) 
-        {
-            System.out.println("Audio is already "+
-            "being played");
-            return;
-        }
-        clip.close();
-        resetAudioStream();
-        clip.setMicrosecondPosition(currentFrame);
-        this.play();
-    }
-    
-    
- // Method to restart the audio
-    public void restart() throws IOException, LineUnavailableException,
-                                            UnsupportedAudioFileException 
-    {
-        clip.stop();
-        clip.close();
-        resetAudioStream();
-        currentFrame = 0L;
-        clip.setMicrosecondPosition(0);
-        this.play();
-    }
-      
-    
-    // Method to stop the audio
-    public void stop() throws UnsupportedAudioFileException,
-    IOException, LineUnavailableException 
-    {
-        currentFrame = 0L;
-        clip.stop();
-        clip.close();
-    }
-    
-    
- // Method to jump over a specific part
-    public void jump(long c) throws UnsupportedAudioFileException, IOException,
-                                                        LineUnavailableException 
-    {
-        if (c > 0 && c < clip.getMicrosecondLength()) 
-        {
-            clip.stop();
-            clip.close();
-            resetAudioStream();
-            currentFrame = c;
-            clip.setMicrosecondPosition(c);
-            this.play();
-        }
-    }
-      
-    // Method to reset audio stream
-    public void resetAudioStream() throws UnsupportedAudioFileException, IOException,
-                                            LineUnavailableException 
-    {
-        audioInputStream = AudioSystem.getAudioInputStream(
-        new File(filePath).getAbsoluteFile());
-        clip.open(audioInputStream);
-        clip.loop(Clip.LOOP_CONTINUOUSLY);
-    }
+	
+	public void resetAudioStream() throws UnsupportedAudioFileException, IOException,
+    LineUnavailableException 
+		{
+		audioInputStream = AudioSystem.getAudioInputStream(
+				new File(filePath).getAbsoluteFile());
+		clip.open(audioInputStream);
+		clip.loop(Clip.LOOP_CONTINUOUSLY);
+		}
 	
 	
 	
@@ -205,6 +119,9 @@ public class myFile {
 		frame.setBounds(100, 100, 309, 300);
 		frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		frame.getContentPane().setLayout(null);
+		
+		
+        
 		
 		JLabel zzz = new JLabel("A new File named ZZZ.txt has been created,\r\n");
 		zzz.setBounds(10, 11, 273, 25);
@@ -225,7 +142,7 @@ public class myFile {
 				
 			}
 		});
-		keep.setBounds(10, 110, 114, 23);
+		keep.setBounds(10, 110, 126, 23);
 		frame.getContentPane().add(keep);
 		
 		JButton del = new JButton("delete the file");
@@ -238,8 +155,13 @@ public class myFile {
 				
 			}
 		});
-		del.setBounds(174, 110, 109, 23);
+		del.setBounds(157, 110, 126, 23);
 		frame.getContentPane().add(del);
+		
+		
+		
+		
+		
 		
 		JButton nuck = new JButton("Nuclear Button");
 		nuck.setBackground(Color.RED);
@@ -248,43 +170,61 @@ public class myFile {
 			public void actionPerformed(ActionEvent e) {
 				
 				 
+				
+			      
+		
+				
 				try
 		        {
-		            filePath = "../Chapter11/src/myFileP2/0002074.wav";
-		            myFile audioPlayer = new myFile();
-		              
-		            audioPlayer.play();
-		            Scanner sc = new Scanner(System.in);
-		              
-		            while (true)
-		            {
-		                System.out.println("1. pause");
-		                System.out.println("2. resume");
-		                System.out.println("3. restart");
-		                System.out.println("4. stop");
-		                System.out.println("5. Jump to specific time");
-		                int c = sc.nextInt();
-		                audioPlayer.gotoChoice(c);
-		                if (c == 4)
-		                break;
-		            }
-		            sc.close();
-		        } 
+		           
+		            clip.loop(Clip.LOOP_CONTINUOUSLY); //starting up the lawnmover of hell 
 		          
+		        }
+		         
 		        catch (Exception ex) 
 		        {
 		            System.out.println("Error with playing sound.");
 		            ex.printStackTrace();
 		          
 		          }
+				nuck.setVisible(false);
+					
 				
 				
-			    
-			    
-			    
-			    
-			    
-			    
+				
+				
+				
+				JButton stop = new JButton("stop the pain");
+				stop.setVisible(true); //setting visablitly to true
+				 
+				stop.setBackground(Color.CYAN);
+				stop.setForeground(Color.BLACK);
+				stop.addActionListener(new ActionListener() {
+					public void actionPerformed(ActionEvent e) {
+						
+						nuck.setVisible(true);
+						stop.setVisible(false);
+						
+						try
+				        {
+				            
+				            clip.stop();
+				          
+				        }
+				         
+				        catch (Exception ex) 
+				        {
+				            System.out.println("Error with stoping sound.");
+				            ex.printStackTrace();
+				          
+				          }
+						
+						
+						
+					}
+				});
+				stop.setBounds(85, 202, 120, 23);
+				frame.getContentPane().add(stop);
 				
 				
 				
@@ -293,5 +233,12 @@ public class myFile {
 			}});
 		nuck.setBounds(85, 202, 120, 23);
 		frame.getContentPane().add(nuck);
-	}
+		
+		
+		
+		
+	
+		
+		
+}
 }
