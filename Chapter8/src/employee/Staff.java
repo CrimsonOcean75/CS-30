@@ -33,22 +33,8 @@ public class Staff extends Faculty{ //extending UEmployee
 	public String getTitle() {
 		return Title; //returning the title
 	}
+
 	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
+
 	
 }

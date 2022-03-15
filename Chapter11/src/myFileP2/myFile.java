@@ -20,7 +20,9 @@ import java.awt.event.ActionListener;
 import java.awt.event.ActionEvent;
 import java.awt.Color;
 import java.util.concurrent.TimeUnit;
-import java.util.Timer;
+
+import javax.swing.Timer;
+
 
 
 
@@ -167,42 +169,28 @@ public class myFile {
 		
 		del.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
-				boolean eurt = false;
 				
 				
-				//Keep1.setText("the file is being deleted");
-				//del.setVisible(false);
-				//keep.setVisible(false);
-				eurt = true;
-				
-				
-				System.out.println("go");
-				
-				try
-				{
-					TimeUnit.SECONDS.sleep(1);
-				}
-				catch(InterruptedException ex)
-				{
-				    Thread.currentThread().interrupt();
-				}
 				
 				
 				Keep1.setText("the file is being deleted");
 				del.setVisible(false);
 				keep.setVisible(false);
-				System.out.println("noper"); // the god line
 				
-				
-				
-				try
-				{
-					TimeUnit.SECONDS.sleep(4);
-				}
-				catch(InterruptedException ex)
-				{
-				    Thread.currentThread().interrupt();
-				}
+				 ActionListener taskPerformer = new ActionListener() {
+			            public void actionPerformed(ActionEvent evt) {
+			            	Keep1.setText("the file has been deleted");
+			            	System.out.println("ran");
+			            	
+			            }
+			        };
+			        Timer timer = new Timer(1500 ,taskPerformer);
+			        timer.setRepeats(false);
+			        timer.start();
+			      
+			        
+			     
+			
 				
 				
 				/*
