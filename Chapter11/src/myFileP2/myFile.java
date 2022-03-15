@@ -19,6 +19,10 @@ import javax.swing.JButton;
 import java.awt.event.ActionListener;
 import java.awt.event.ActionEvent;
 import java.awt.Color;
+import java.util.concurrent.TimeUnit;
+import java.util.Timer;
+
+
 
 public class myFile {
 
@@ -63,6 +67,10 @@ public class myFile {
 	 * Launch the application.
 	 */
 	public static void main(String[] args) {
+		
+		File zzztxt = new File("../Chapter11/src/myFileP2/zzz.txt");
+		
+		
 		EventQueue.invokeLater(new Runnable() {
 			public void run() {
 				try {
@@ -96,6 +104,8 @@ public class myFile {
         status = "play";
     }
 	
+   public static Object obj01 = new Object();
+	
 	
 	public void resetAudioStream() throws UnsupportedAudioFileException, IOException,
     LineUnavailableException 
@@ -110,7 +120,7 @@ public class myFile {
 	
 	
 	
-	    
+	   
 	/**
 	 * Initialize the contents of the frame.
 	 */
@@ -131,10 +141,18 @@ public class myFile {
 		Keep1.setBounds(10, 39, 273, 14);
 		frame.getContentPane().add(Keep1);
 		
+		
+		
+		JButton del = new JButton("delete the file"); //creating the button early
+		
+		
 		JButton keep = new JButton("keep this file");
 		keep.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 				
+				Keep1.setText("the file is safe with me"); //setting the test of 1 of the text boxes
+				del.setVisible(false);
+				keep.setVisible(false);
 				
 				//keep button code
 				
@@ -145,11 +163,104 @@ public class myFile {
 		keep.setBounds(10, 110, 126, 23);
 		frame.getContentPane().add(keep);
 		
-		JButton del = new JButton("delete the file");
+		
+		
 		del.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
+				boolean eurt = false;
 				
-				//delete button code
+				
+				//Keep1.setText("the file is being deleted");
+				//del.setVisible(false);
+				//keep.setVisible(false);
+				eurt = true;
+				
+				
+				System.out.println("go");
+				
+				try
+				{
+					TimeUnit.SECONDS.sleep(1);
+				}
+				catch(InterruptedException ex)
+				{
+				    Thread.currentThread().interrupt();
+				}
+				
+				
+				Keep1.setText("the file is being deleted");
+				del.setVisible(false);
+				keep.setVisible(false);
+				System.out.println("noper"); // the god line
+				
+				
+				
+				try
+				{
+					TimeUnit.SECONDS.sleep(4);
+				}
+				catch(InterruptedException ex)
+				{
+				    Thread.currentThread().interrupt();
+				}
+				
+				
+				/*
+				if(eurt) {
+					try
+					{
+					    Thread.sleep(1000);
+					}
+					catch(InterruptedException ex)
+					{
+					    Thread.currentThread().interrupt();
+					}
+					
+					
+					System.out.println(Thread.currentThread());
+					
+					
+					
+					
+					
+					*/
+					
+					
+					
+					
+					
+					
+					
+					
+					/*
+						synchronized (obj01) {
+						
+						
+							try
+							{
+							
+		
+							obj01.wait(2000);
+					        System.out.println("Object '" + obj01 + "' is woken after" +
+					          " waiting for 2 second");
+						}
+						catch(InterruptedException ex)
+						{
+							System.out.println("the catch statment ran");
+						    Thread.currentThread().interrupt();
+						}
+						       
+						    }
+						    */
+				
+				
+				
+				
+				//Timer time = new Time(1500, listener);
+			   // time.setRepeats(false);
+			    //time.start();
+				
+				
 				
 				
 				

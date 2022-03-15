@@ -50,3 +50,20 @@ public class Vehicle_Testing_Code {
 }
 }
 }
+
+/*screen dump
+ * 
+ * The car you have is a civic. And it's colour is red.
+   do you want to check your vehicle's fulids? (1 for yes 2 for no)
+   1
+   your vehicle's fluid is full
+ * 
+ * 
+ * 
+ * 
+ */
+
+
+
+
+
