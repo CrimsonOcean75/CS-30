@@ -4,8 +4,7 @@ import java.awt.EventQueue;
 
 import java.io.File;
 import java.io.IOException;
-import java.util.Scanner;
-  
+
 import javax.sound.sampled.AudioInputStream;
 import javax.sound.sampled.AudioSystem;
 import javax.sound.sampled.Clip;
@@ -15,12 +14,12 @@ import javax.sound.sampled.UnsupportedAudioFileException;
 
 import javax.swing.JFrame;
 import javax.swing.JLabel;
+import javax.swing.SwingConstants;
+import javax.swing.ImageIcon;
 import javax.swing.JButton;
 import java.awt.event.ActionListener;
 import java.awt.event.ActionEvent;
 import java.awt.Color;
-import java.util.concurrent.TimeUnit;
-
 import javax.swing.Timer;
 
 
@@ -70,7 +69,18 @@ public class myFile {
 	 */
 	public static void main(String[] args) {
 		
-		File zzztxt = new File("../Chapter11/src/myFileP2/zzz.txt");
+		try {
+			  
+            // if it does not exist
+            if (zzztxt.createNewFile())
+                System.out.println("File created");
+            else //if it exists
+                System.out.println("File already exists");
+        }
+        catch (Exception e) {
+            System.err.println(e);
+        }
+    
 		
 		
 		EventQueue.invokeLater(new Runnable() {
@@ -85,9 +95,9 @@ public class myFile {
 		});
 	}
 
-	/**
-	 * Create the application.
-	 */
+	
+	 //Create the application.
+	 
 	
 	 public void stop() throws UnsupportedAudioFileException,
 	    IOException, LineUnavailableException 
@@ -106,9 +116,15 @@ public class myFile {
         status = "play";
     }
 	
-   public static Object obj01 = new Object();
+   
+  
+   
+   public static File zzztxt = new File("../Chapter11/src/myFileP2/zzz.txt"); // making a file that can be seen anywhere in the GUI
 	
-	
+   
+   public int inc = 0 ;//to incremenrt inside a timer loop 
+   
+   
 	public void resetAudioStream() throws UnsupportedAudioFileException, IOException,
     LineUnavailableException 
 		{
@@ -123,9 +139,9 @@ public class myFile {
 	
 	
 	   
-	/**
-	 * Initialize the contents of the frame.
-	 */
+	
+	 //Initialize the contents of the frame.
+	 
 	private void initialize() {
 		frame = new JFrame();
 		frame.setBounds(100, 100, 309, 300);
@@ -133,7 +149,15 @@ public class myFile {
 		frame.getContentPane().setLayout(null);
 		
 		
-        
+		JLabel loadBar = new JLabel();
+		loadBar.setBounds(10, 110, 270, 25);
+		frame.getContentPane().add(loadBar);
+		
+		JLabel loadBarPer = new JLabel();
+		loadBarPer.setBounds(10, 134, 273, 23);
+		frame.getContentPane().add(loadBarPer);
+		loadBarPer.setHorizontalAlignment(SwingConstants.CENTER);
+		loadBarPer.setVerticalAlignment(SwingConstants.CENTER);
 		
 		JLabel zzz = new JLabel("A new File named ZZZ.txt has been created,\r\n");
 		zzz.setBounds(10, 11, 273, 25);
@@ -171,87 +195,82 @@ public class myFile {
 			public void actionPerformed(ActionEvent e) {
 				
 				
+				//delete button
 				
+				File zzztxt = new File("../Chapter11/src/myFileP2/zzz.txt");
 				
 				Keep1.setText("the file is being deleted");
 				del.setVisible(false);
 				keep.setVisible(false);
 				
+				
+				if (zzztxt.delete()) { //dont worry bout it
+				     
+				    } 
+				
+				
+				
 				 ActionListener taskPerformer = new ActionListener() {
 			            public void actionPerformed(ActionEvent evt) {
-			            	Keep1.setText("the file has been deleted");
-			            	System.out.println("ran");
+			            	
+			            	
+			            	
+			            	inc = inc +1; 
+			            	
+			            	switch (inc) {
+			            	case 1: 
+			            		
+			            		loadBar.setIcon(new ImageIcon("../Chapter11/src/myFileP2/BarEmpty.png"));
+			            		loadBarPer.setText("0%");
+			            		break;
+			            	case 2: 
+			            		
+			            		loadBar.setIcon(new ImageIcon("../Chapter11/src/myFileP2/Bar1.png"));
+			            		loadBarPer.setText("9%");
+			            		break;
+			            	case 3: 
+			            		
+			            		loadBar.setIcon(new ImageIcon("../Chapter11/src/myFileP2/Bar2.png"));
+			            		loadBarPer.setText("30%");
+			            		break;
+			            	case 4: 
+			            		
+			            		loadBar.setIcon(new ImageIcon("../Chapter11/src/myFileP2/Bar3.png"));
+			            		loadBarPer.setText("47%");
+			            		break;
+			            	case 5: 
+			            		
+			            		loadBar.setIcon(new ImageIcon("../Chapter11/src/myFileP2/Bar4.png"));
+			            		loadBarPer.setText("69%");
+			            		break;
+			            	case 6: 
+			            		
+			            		loadBar.setIcon(new ImageIcon("../Chapter11/src/myFileP2/Bar5.png"));
+			            		loadBarPer.setText("95%");
+			            		break;
+			            	case 7: 
+			            		
+			            		loadBar.setIcon(new ImageIcon("../Chapter11/src/myFileP2/Bar6.png"));
+			            		Keep1.setText("the file has been deleted");
+			            		loadBarPer.setText("100%");
+			            		break;
+			            		
+			            	}
+			            	
+			            	
+			            	
 			            	
 			            }
 			        };
-			        Timer timer = new Timer(1500 ,taskPerformer);
-			        timer.setRepeats(false);
+			        Timer timer = new Timer(1250 ,taskPerformer);
+			        timer.setRepeats(true);
 			        timer.start();
+			        
+			        if (inc == 7) {
+			        	timer.stop();
+			        }
 			      
 			        
-			     
-			
-				
-				
-				/*
-				if(eurt) {
-					try
-					{
-					    Thread.sleep(1000);
-					}
-					catch(InterruptedException ex)
-					{
-					    Thread.currentThread().interrupt();
-					}
-					
-					
-					System.out.println(Thread.currentThread());
-					
-					
-					
-					
-					
-					*/
-					
-					
-					
-					
-					
-					
-					
-					
-					/*
-						synchronized (obj01) {
-						
-						
-							try
-							{
-							
-		
-							obj01.wait(2000);
-					        System.out.println("Object '" + obj01 + "' is woken after" +
-					          " waiting for 2 second");
-						}
-						catch(InterruptedException ex)
-						{
-							System.out.println("the catch statment ran");
-						    Thread.currentThread().interrupt();
-						}
-						       
-						    }
-						    */
-				
-				
-				
-				
-				//Timer time = new Time(1500, listener);
-			   // time.setRepeats(false);
-			    //time.start();
-				
-				
-				
-				
-				
 			}
 		});
 		del.setBounds(157, 110, 126, 23);
@@ -268,10 +287,6 @@ public class myFile {
 		nuck.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 				
-				 
-				
-			      
-		
 				
 				try
 		        {
@@ -287,9 +302,6 @@ public class myFile {
 		          
 		          }
 				nuck.setVisible(false);
-					
-				
-				
 				
 				
 				
@@ -332,11 +344,6 @@ public class myFile {
 			}});
 		nuck.setBounds(85, 202, 120, 23);
 		frame.getContentPane().add(nuck);
-		
-		
-		
-		
-	
 		
 		
 }
