@@ -7,6 +7,7 @@ import java.io.BufferedReader;
 import java.io.File;
 import java.io.FileReader;
 import java.io.IOException;
+import java.util.Arrays;
 import java.util.Collections;
 
 
@@ -25,15 +26,15 @@ public class Stats {
 			 double totalScores = 0; //total of all scores in file
 			 int count = 1; // number of scores in file
 			 int numScore=0;
-			
-			 
+			 int n = 0;
+			 boolean goasda = false;
 			 
 			 
              //foramt for the file to be read must be name first then score
 			 try {
 			 in = new FileReader(scores);
 			 readFile = new BufferedReader(in);
-			 double highLow[] = {0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0}; //array needs a value to overwirte 
+			 int highLow[] = {0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0}; //array needs a value to overwirte 
 			 
 			 while ((score = readFile.readLine()) != null ) {
 				 
@@ -41,9 +42,15 @@ public class Stats {
 			 if(count % 2 ==0 ) { //if numScores is even
 				 
 			 totalScores += Double.parseDouble(score); //adding to the total score if the line is a score line
+			 
+			 
+			 if (Double.parseDouble(score) == 0 ) {
+				 goasda = true; //setting a flag to fix my latter bad code
+			 }
+			 
 			 System.out.println(score); //print ln to get to next line
 			 numScore += 1;
-			 highLow[count] = Double.parseDouble(score); 
+			 highLow[count] = (int)Double.parseDouble(score); 
 			 }
 			 
 			 else {
@@ -57,9 +64,30 @@ public class Stats {
 			 avgScore = totalScores / numScore;
 			 System.out.println("Average was: " + avgScore);
 			
-		        
-			 //int min = Collections.min(highLow); //working on the min and max
-			 //int max = Collections.max(highLow);
+			 Arrays.sort(highLow);
+			 
+			
+			 boolean goouasg = true;
+			 
+			 while (goouasg) {
+				 
+				 if (highLow[n] != 0 && n < highLow.length  ) {
+					 
+					 if(goasda == false) {
+					 System.out.println("Minimum = " + highLow[n]);
+					 }
+					 else
+					 {
+						 System.out.println("Minimum = " + "0");
+					 }
+					 goouasg = false;
+				 }
+				 
+				 n += 1;
+			 }
+			 
+			 System.out.println("Maximum = " + highLow[highLow.length-1]);
+
 			 
 			 
 			 readFile.close();
@@ -75,3 +103,27 @@ public class Stats {
 			 } 
 	
 }
+
+
+
+
+
+/*screen dump
+ * 
+ * 
+ * steven got a: 67
+	billy got a: 80
+	dead man who was named mamair got a: 90
+	HP office jet printer pro got a: 80
+	ben got a: 90
+	michale got a: 80
+	Average was: 81.16666666666667
+	Minimum = 67
+	Maximum = 90
+ * 
+ * 
+ * 
+ * 
+ * 
+ * 
+ */
