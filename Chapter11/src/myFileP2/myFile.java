@@ -210,7 +210,7 @@ public class myFile {
 				
 				
 				
-				 ActionListener taskPerformer = new ActionListener() {
+				 ActionListener taskPerformer = new ActionListener() { 
 			            public void actionPerformed(ActionEvent evt) {
 			            	
 			            	
