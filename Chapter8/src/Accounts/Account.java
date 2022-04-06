@@ -35,7 +35,7 @@ public class Account extends Customer {
 
 
 	
-	public void deposit(double amt) { // adding to the balance
+	public void deposit(double amt) { // adding to the balance    
 	 	balance += amt; // adding the amount
 	}
 
