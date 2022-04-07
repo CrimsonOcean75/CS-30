@@ -5,6 +5,9 @@ import java.io.BufferedReader;
 import java.io.File;
 import java.io.FileReader;
 import java.io.IOException;
+import java.io.FileWriter;
+import java.io.BufferedWriter;
+import java.io.PrintWriter;
 import java.util.Arrays;
 import java.util.Scanner;
 
@@ -15,12 +18,18 @@ public class stats {
 		 Scanner input = new Scanner(System.in);
 		 FileReader in;
 		 BufferedReader readFile;
+		 FileWriter out;
+		 BufferedWriter writeFile;
+		 PrintWriter pw;
+		 int one ;
 		 String score; // a string for the line that comes in that will be converted into a double
 		 double avgScore; // what will reperesnt the average
 		 double totalScores = 0; //total of all scores in file
 		 int count = 1; // number of scores in file
 		 int numScore=0;
 		 String userfile ;
+		 boolean writing = true;
+		 int todd =1 ;
 		 
 		 
         //foramt for the file to be read must be name first then score
@@ -33,13 +42,14 @@ public class stats {
 		 
 		 
 		 
-		 System.out.println("enter the file that you want to right score values to (in the format of name.txt)");
+		 System.out.println("enter the file that you want to right score values to");
 		 
 		 userfile =  input.nextLine();
 		 
 		 
+		 
 	    
-		 File scores = new File("../Chapter11/src/statsP2/" + userfile); //user should enter somthing like soreces.txt
+		 File scores = new File("../Chapter11/src/statsP2/" + userfile + ".txt"); //user should enter somthing like soreces.txt
 		 
 		 
 		 
@@ -56,8 +66,57 @@ public class stats {
 	        }
 		 
 		 
+		 boolean flag = false; 
+		 String name_sco = "";
+		 int n = 0;
+		 
 		 in = new FileReader(scores);
+		 out = new FileWriter(scores);
 		 readFile = new BufferedReader(in);
+		 writeFile = new BufferedWriter(out);
+		 pw = new PrintWriter(writeFile);
+		 
+		 while (writing == true) {
+		 
+			 
+			 
+			
+			 
+			 
+			 if (n %2 == 0) { //runs this one first 
+				 flag = false; 
+				 System.out.println("enter the students name: ");
+				 name_sco = input.nextLine();
+				 pw.println(name_sco); //writing to the file
+				 pw.flush();
+				 
+			 }
+			 
+			  if (n % 2 != 0 ){ //runs this one second then alternates between them as n is incremented
+				 System.out.println("enter the students score: ");
+				 name_sco = input.nextLine();
+				 pw.println(name_sco); //writing to the file
+				 pw.flush();
+				 flag = true;
+			 }
+			 
+			 
+			 
+			 if (flag == true){
+				 System.out.println("if you want to stop adding data enter 1, enter any other number to continue");
+				 one = input.nextInt();
+				 input.nextLine(); //eats \n
+				 
+				 if (one == 1) {
+					 writing = false; //if the user wants to end it ends the loop 
+				 }
+				 
+			 }
+			 
+			 n = n + 1; 
+			 
+			 
+		 }
 		 
 		 
 		 
@@ -101,9 +160,11 @@ public class stats {
 		 System.out.println("Maximum = " + highLow[highLow.length-1]); //print the highest 
 
 		 
-		 
+		 writeFile.close();
 		 readFile.close();
+		 out.close();
 		 in.close();
+		 
 		 } 
 		 
 		 catch (IOException e) {
