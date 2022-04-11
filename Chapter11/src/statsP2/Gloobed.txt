@@ -1,0 +1,8 @@
+tom
+50
+jimbo
+100
+billy
+50
+jermimia
+100
