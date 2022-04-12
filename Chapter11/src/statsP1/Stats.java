@@ -1,3 +1,18 @@
+/*
+
+Program: stats.java          Last Date of this Revision: april 12, 2022
+
+Purpose: An application that ues a txt file and outputs information about the scores
+
+Author: Max Piercey, 
+School: CHHS
+Course: Computer Programming 30
+
+
+*/
+
+
+
 package statsP1;
 
 
@@ -111,7 +126,7 @@ public class Stats {
 /*screen dump
  * 
  * 
- * steven got a: 67
+ *  steven got a: 67
 	billy got a: 80
 	dead man who was named mamair got a: 90
 	HP office jet printer pro got a: 80

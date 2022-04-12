@@ -2,7 +2,7 @@
 
 Program: stats.java          Last Date of this Revision: april 12, 2022
 
-Purpose: An application that creates a file based on user input then writes user inputed names and scores to a txt file
+Purpose: An application that creates a file based on user input then writes user inputed names and scores to a txt file and outputs information about the scores
 
 Author: Max Piercey, 
 School: CHHS
@@ -53,7 +53,7 @@ public class stats {
         //foramt for the file to be read must be name first then score
 		 try {
 		
-		 int highLow[] = {}; //array to be appened by the users imputs
+		 
 		 
 		 
 		 //make the file and put the values in
@@ -122,7 +122,7 @@ public class stats {
 			  if (n % 2 != 0 ){ //runs this one second then alternates between them as n is incremented
 				 System.out.println("enter the students score: ");
 				 name_sco = input.nextLine();
-				 arrNew [highLow.length + startFromTheBottemNowWeHere] = (int)Double.parseDouble(name_sco); //it's like god wrote this code
+				 arrNew [startFromTheBottemNowWeHere] = (int)Double.parseDouble(name_sco); //it's like god wrote this code
 				 pw.println(name_sco); //writing to the file
 				 pw.flush();
 				 startFromTheBottemNowWeHere = startFromTheBottemNowWeHere+ 1;

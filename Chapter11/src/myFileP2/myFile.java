@@ -1,3 +1,18 @@
+/*
+
+Program: myFile.java          Last Date of this Revision: april 12, 2022
+
+Purpose: An application that promps a user to keep or delete a created file, amoung other non curicular things
+
+Author: Max Piercey, 
+School: CHHS
+Course: Computer Programming 30
+
+
+*/
+
+
+
 package myFileP2;
 
 import java.awt.EventQueue;
@@ -58,7 +73,7 @@ public class myFile {
         // open audioInputStream to the clip
         clip.open(audioInputStream);
           
-        //clip.loop(Clip.LOOP_CONTINUOUSLY);
+        
         
         
         initialize();
