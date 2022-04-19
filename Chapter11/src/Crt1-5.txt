@@ -1,0 +1,18 @@
+#1 No, files are only perminatly stored data (persistant)
+
+#2 import java.io.*;
+
+#3 only a single backslash
+
+#4 a) a try statment
+b)
+try {
+	//stuff
+	}
+	catch (IOException e) {
+ System.out.println("Problem with input/output.");
+ System.err.println("IOException: " + e.getMessage());
+ } 
+
+#5 a) err stream
+b) they are displayed in the console 
