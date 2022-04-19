@@ -1,3 +1,20 @@
+/*
+
+Program: MyFile.java          Last Date of this Revision: april 19, 2022
+
+Purpose: checks if a file exists or not
+
+Author: Max Piercey, 
+School: CHHS
+Course: Computer Programming 30
+
+
+*/
+
+
+
+
+
 package myFileP1;
 
 import java.awt.EventQueue;

@@ -1,3 +1,19 @@
+/*
+
+Program: Roster.java          Last Date of this Revision: april 19, 2022
+
+Purpose: a program that asks the user for some amount of students first and last names and then writes the data to a file
+
+Author: Max Piercey, 
+School: CHHS
+Course: Computer Programming 30
+
+
+*/
+
+
+
+
 package roster;
 
 
@@ -164,6 +180,43 @@ public class Roster {
 
 
 
+/*screen dump
+ * 
+ * 
+ * 
+ * enter the file that you want to right score values to
+tood
+enter the number of students you want to enter
+3
+enter the students first name: 
+tim
+enter the students last name: 
+tim
+enter the students first name: 
+tom
+enter the students last name: 
+tom
+enter the students first name: 
+dead
+enter the students last name: 
+dead
 
+
+
+tim tim
+tom tom
+dead dead
+Data written to file.
+ * 
+ * 
+ * 
+ * 
+ * 
+ * 
+ * 
+ * 
+ * 
+ * 
+ */
 
 

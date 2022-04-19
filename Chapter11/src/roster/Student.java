@@ -1,3 +1,18 @@
+/*
+
+Program: Student.java          Last Date of this Revision: april 19, 2022
+
+Purpose: an object used to write student names
+
+Author: Max Piercey, 
+School: CHHS
+Course: Computer Programming 30
+
+
+*/
+
+
+
 package roster;
 
 

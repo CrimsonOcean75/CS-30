@@ -1,3 +1,20 @@
+/*
+
+Program: findAReplace.java          Last Date of this Revision: april 19, 2022
+
+Purpose: a program that asks the user for a file and then allows them to find and replace a word or phrase and write the new file to another file
+
+Author: Max Piercey, 
+School: CHHS
+Course: Computer Programming 30
+
+
+*/
+
+
+
+
+
 package Find_and_Replace;
 
 import java.io.File;
@@ -105,7 +122,14 @@ public class findAReplace {
 /* screen dump
  * 
  * 
- * 
+ * enter the file that you want to search (incude the file extention)
+todd.txt
+the file exists
+
+enter a search word or phrase: 
+todd
+enter what you want to replace that word/phrase with: 
+coward
  * 
  * 
  * 
