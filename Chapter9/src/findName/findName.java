@@ -1,3 +1,18 @@
+/*
+
+Program: findName.java          Last Date of this Revision: april 19, 2022
+
+Purpose: allow the user to enter students into a list then search for a students name
+
+Author: Max Piercey, 
+School: CHHS
+Course: Computer Programming 30
+
+
+*/
+
+
+
 package findName;
 
 
@@ -15,7 +30,7 @@ public class findName {
 	 
 	
 	public static void main(String[] args) {
-		// TODO Auto-generated method stub
+	
 
 		
 		 int qw = 1;
@@ -89,12 +104,6 @@ public class findName {
 	what name would you like to search?: bob
 	
 	First occurrence is element 2
- * 
- * 
- * 
- * 
- * 
- * 
  * 
  * 
  * 

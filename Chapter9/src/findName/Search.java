@@ -1,3 +1,19 @@
+
+/*
+
+Program: search.java          Last Date of this Revision: april 19, 2022
+
+Purpose: an object that helps findName
+
+Author: Max Piercey, 
+School: CHHS
+Course: Computer Programming 30
+
+
+*/
+
+
+
 package findName;
 
 public class Search {

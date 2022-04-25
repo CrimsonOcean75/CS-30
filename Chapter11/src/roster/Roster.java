@@ -41,6 +41,7 @@ import java.util.Arrays;
 
 
 
+@SuppressWarnings("unused")
 public class Roster {
     
     public static void main(String[] args) throws Exception {
